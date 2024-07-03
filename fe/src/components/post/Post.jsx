@@ -19,7 +19,7 @@ export default function Post({ post }) {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`http://localhost:8800/api/users?userId=${post.userId}`);
+      const res = await axios.get(`https://capstone-socialmedia-backend.onrender.com/users?userId=${post.userId}`);
       setUser(res.data);
     };
     fetchUser();
@@ -27,7 +27,7 @@ export default function Post({ post }) {
 
   const likeHandler = () => {
     try {
-      axios.put("http://localhost:8800/api/posts/" + post._id + "/like", { userId: currentUser._id });
+      axios.put("https://capstone-socialmedia-backend.onrender.com/posts/" + post._id + "/like", { userId: currentUser._id });
     } catch (err) {}
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);

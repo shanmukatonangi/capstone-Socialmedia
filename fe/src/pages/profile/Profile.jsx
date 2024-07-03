@@ -14,7 +14,7 @@ export default function Profile() {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`http://localhost:8800/api/users?username=${username}`);
+      const res = await axios.get(`https://capstone-socialmedia-backend.onrender.com/users?username=${username}`);
       setUser(res.data);
     };
     fetchUser();

@@ -12,8 +12,8 @@ const { user } = useContext(AuthContext);
 useEffect(() => {
   const fetchPosts = async () => {
     const res = username
-     ? await axios.get("http://localhost:8800/api/posts/profile/" + username)
-      : await axios.get("http://localhost:8800/api/posts/timeline/" + user._id);
+     ? await axios.get("https://capstone-socialmedia-backend.onrender.com/posts/profile/" + username)
+      : await axios.get("https://capstone-socialmedia-backend.onrender.com/posts/timeline/" + user._id);
 
     // Check if res.data is an array before calling sort
     if (Array.isArray(res.data)) {
